@@ -44,14 +44,14 @@ module.exports = {
         content: '❌ | 没有音乐在播放！'
       });
 
-    var 音量 = interaction.options.get('音量').value;
-    音量 = Math.max(0, 音量);
-    音量 = Math.min(200, 音量);
-    const success = queue.setVolume(音量);
+    var vol = interaction.options.get('vol').value;
+    vol = Math.max(0, vol);
+    vol = Math.min(200, vol);
+    const success = queue.setVolume(vol);
 
     return void interaction.followUp({
       // content: success ? `🔊 | Volume set to ${volume}!` : '❌ | Something went wrong!',
-      content: success ? `🔊 | 音量设置为  ${音量}!` : '❌ | 出了点问题！',
+      content: success ? `🔊 | 音量设置为  ${vol}!` : '❌ | 出了点问题！',
     });
   },
 };
